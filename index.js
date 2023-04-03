@@ -4,7 +4,7 @@ const form = document.querySelector("form");
       const elementsContainer = document.querySelector("#elements-container");
       const maleFilter = document.querySelector("#male-filter");
       const femaleFilter = document.querySelector("#female-filter");
-
+      // console.log("maleFilter ",maleFilter )
       let elements = [];
 
       function createElement(name, gender) {
@@ -32,8 +32,11 @@ const form = document.querySelector("form");
         const selectedValue = document.querySelector(
           'input[name="gender-filter"]:checked'
         )?.value;
+        console.log("elements ",elements)
         elements.forEach((el) => {
+          // console.log("el",el)
           if (selectedValue && !el.textContent.includes(selectedValue)) {
+            // console.log("selectedValue",selectedValue)
             el.style.display = "none";
           } else {
             el.style.display = "block";
